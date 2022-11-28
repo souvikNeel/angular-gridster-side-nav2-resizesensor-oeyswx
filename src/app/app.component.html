@@ -1,0 +1,16 @@
+<mat-sidenav-container class="side-nav-container" >
+	<mat-sidenav #sideNav mode="side" [opened]="sideNavOpen"> 
+		<p>
+			side nav content
+		</p>
+
+	</mat-sidenav>
+
+  <button type="button" (click)="sideNavToggle()">Toggle Side Navigation component</button>
+
+	<gridster #gridster [options]="options" class="gridster">
+		<gridster-item [item]="item.gridsterItem" *ngFor="let item of dashboard">
+      <app-tile [gridsterItem]="item.gridsterItem"></app-tile>
+		</gridster-item>
+	</gridster>
+</mat-sidenav-container>
